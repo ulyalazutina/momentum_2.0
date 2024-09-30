@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>momentum 2.0</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header></header>
-        <section class="data-time">
-            <p id="time">00:00:00</p>
-            <p id="date">01 января, понедельник</p>
-        </section>
-        <footer></footer>
-    </div> 
-</body>
+      <header></header>
+      <section class="data-time">
+        <p id="time">00:00:00</p>
+        <p id="date">01 января, понедельник</p>
+      </section>
+      <footer class="todo">
+        <input type="text" placeholder="Новая задача" class="todo__input" id="input-todo"/>
+        <div class="todo__items">
+
+        </div>
+        <button type="button" class="todo__delete">Удалить выполненные задачи</button>
+      </footer>
+    </div>
+  </body>
 </html>
+
+
+<!-- 
+1. Эффекты наведения
+2. Анимация добавления, удаления
+3. Изменение внешнего вида выполненной задачи
+4. Вывод модалки на пустую строку
+5. Адаптация
+6. Менять цвет текста времени в зависимости от картинки
+
+-->
