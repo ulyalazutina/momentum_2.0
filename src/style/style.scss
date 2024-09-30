@@ -12,4 +12,20 @@
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+}
+
+.data-time {
+    display: grid;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    background: #000;
+
+    p {
+        color: white;
+    }
 }
