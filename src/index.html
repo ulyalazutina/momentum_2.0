@@ -7,7 +7,18 @@
   </head>
   <body>
     <div class="container">
-      <header></header>
+      <header class="weather">
+        <div class="weather__wrap">
+            <input class="weather__input" type="text" value="Краснодар">
+            <div class="weather__items hide">
+                <!-- список городов -->
+            </div>
+        </div>
+        <div class="weather__inner">
+            <div class="weather__icon"></div>
+            <p class="weather__deg">0 °C</p>
+        </div>
+      </header>
       <section class="data-time">
         <p id="time">00:00:00</p>
         <p id="date">01 января, понедельник</p>
@@ -19,6 +30,10 @@
         </div>
         <button type="button" class="todo__delete">Удалить выполненные задачи</button>
       </footer>
+      <aside class="modal hide">
+        <h2 class="modal__title"></h2>
+        <button type="button" class="modal__btn">Закрыть</button>
+      </aside>
     </div>
   </body>
 </html>
@@ -31,5 +46,6 @@
 4. Вывод модалки на пустую строку
 5. Адаптация
 6. Менять цвет текста времени в зависимости от картинки
+7. Ошибка получения города после очистки local storage 
 
 -->

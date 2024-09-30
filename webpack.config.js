@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const devServer = (isDev) => isDev && {
     devServer: {
@@ -22,6 +23,7 @@ module.exports = ({ develop }) => ({
     plugins: [
         new HtmlWebpackPlugin({ template: path.resolve(__dirname, 'src/index.html') }),
         new MiniCssExtractPlugin({ filename: develop ? 'css/style.css' : 'css/[name].[contenthash:8].css' }),
+        new Dotenv(),
     ],
     module: {
         rules: [

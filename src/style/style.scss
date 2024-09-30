@@ -33,6 +33,9 @@ body {
     display: grid;
     align-items: center;
     justify-items: center;
+    padding: 100px;
+    align-content: space-between;
+    position: relative;
 }
 
 .data-time {
@@ -74,6 +77,13 @@ body {
         font-size: 24px;
         color: #454343;
         font-family: inherit;
+        transition: all .3s;
+        &:hover {
+            background: rgba(216, 210, 210, 0.897);
+        }
+        &:focus {
+            background: rgba(216, 210, 210, 0.842);
+        }
     }
 
     &__items {
@@ -115,6 +125,9 @@ body {
                 border: 2px solid green;
             }
         }
+        &:hover input{
+            background: red;
+        }
     }
 
     label {
@@ -123,6 +136,10 @@ body {
         align-items: center;
         gap: 10px;
         cursor: pointer;
+        transition: color .3s;
+        &:hover {
+            color: rgb(199, 195, 195);
+        }
     }
 
     &__btn {
@@ -134,6 +151,10 @@ body {
      
     &__icon {
         fill: white;
+        transition: all .3s;
+        &:hover {
+            transform: rotate(8deg);
+        }
     }
 
     .todo__delete {
@@ -148,4 +169,84 @@ body {
         cursor: pointer;
         display: none;
     }
+}
+
+.weather {
+    display: grid;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.192);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 30px 40px;
+    justify-self: end;
+    width: 500px;
+    position: relative;
+    &__wrap {
+        display: grid; 
+        gap: 20px;
+    }
+    &__items {
+        display: grid;
+        gap: 10px;
+        width: 100%;
+        position: absolute;
+        background: rgba(255, 255, 255, 0.96);
+        border-radius: 15px;
+        padding: 30px 40px;
+        left: 0;
+        top: 56%;
+    }
+    &__item {
+        color: rgb(112, 111, 111);
+        border-bottom: 1px solid rgb(143, 143, 143);
+        padding: 10px 0;
+        word-break: break-all;
+    }
+    &__input {
+        width: 100%;
+        height: 40px;
+        border-radius: 15px;
+        background: rgba(196, 194, 194, 0.2);
+        border: none;
+        padding: 10px 15px;
+        font-size: 24px;
+        color: white;
+        font-weight: 400;
+        font-family: inherit;
+        outline: none;
+        transition: all .3s;
+        &:hover {
+            background: rgba(216, 210, 210, 0.658);
+        }
+        &:focus {
+            background: rgba(216, 210, 210, 0.452);
+        }
+    }
+    &__icon {
+        height: 30px;
+        width: 30px;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    &__inner {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__deg {
+        color: white;
+    }
+}
+
+
+.modal {
+    position: absolute;
+    background: white;
+    border-radius: 15px;
+    padding: 40px;
+    width: 80%;
+}
+
+.hide {
+    display: none;
 }
