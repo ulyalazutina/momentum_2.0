@@ -1,5 +1,5 @@
 @media (max-width: 1440px) {
-   .container {
+    .container {
         padding: 80px;
     }
     .data-time #time {
@@ -17,13 +17,14 @@
 @media (max-width: 1024px) {
     .weather {
         padding: 20px 30px;
-        &_input, &__deg, &__item{
+        &_input,
+        &__deg,
+        &__item {
             font-size: 22px;
         }
         &__items {
             padding: 20px 30px;
         }
-
     }
     .todo__input {
         font-size: 22px;
@@ -50,7 +51,9 @@
         width: 100%;
         gap: 15px;
         padding: 15px 20px;
-        &__input, &__deg, &__item {
+        &__input,
+        &__deg,
+        &__item {
             font-size: 20px;
         }
         &__inner {
@@ -69,7 +72,7 @@
         &__input {
             width: 100%;
             font-size: 20px;
-        } 
+        }
         &__item > label {
             font-size: 20px;
         }
@@ -103,7 +106,6 @@
         padding: 10px 15px;
     }
 }
-
 
 @media (max-width: 375px) {
     .data-time #time {

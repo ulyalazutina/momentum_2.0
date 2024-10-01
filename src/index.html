@@ -5,18 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>momentum 2.0</title>
   </head>
+
   <body>
     <div class="container">
       <header class="weather">
         <div class="weather__wrap">
-            <input class="weather__input" type="text" value="Краснодар">
-            <div class="weather__items hide">
-                <!-- список городов -->
-            </div>
+          <input class="weather__input" type="text" value="Краснодар" />
+          <div class="weather__items hide">
+            <!-- список городов -->
+          </div>
         </div>
         <div class="weather__inner">
-            <div class="weather__icon"></div>
-            <p class="weather__deg">0 °C</p>
+          <div class="weather__icon"></div>
+          <p class="weather__deg">0 °C</p>
         </div>
       </header>
       <section class="data-time">
@@ -24,27 +25,21 @@
         <time id="date">01 января, понедельник</time>
       </section>
       <footer class="todo">
-        <input type="text" placeholder="Новая задача" class="todo__input" id="input-todo"/>
-        <div class="todo__items">
-
-        </div>
-        <button type="button" class="todo__delete">Удалить выполненные задачи</button>
+        <input
+          type="text"
+          placeholder="Новая задача"
+          class="todo__input"
+          id="input-todo"
+        />
+        <div class="todo__items"></div>
+        <button type="button" class="todo__delete">
+          Удалить выполненные задачи
+        </button>
       </footer>
       <aside class="modal hide">
         <h2 class="modal__title"></h2>
-        <button type="button" class="modal__btn">Закрыть</button>
+        <button type="button" class="modal__btn"><img src="./img/close.svg" alt="Закрыть"></button>
       </aside>
     </div>
   </body>
 </html>
-
-
-<!-- 
-2. Анимация добавления, удаления
-3. Изменение внешнего вида выполненной задачи
-4. Вывод модалки на пустую строку
-6. Менять цвет текста времени в зависимости от картинки
-7. Ошибка получения города после очистки local storage 
-8. Если в инпуте пусто, то блок с городами не пропадает
-10. Поменять цвет текста в зависимости от фоновой картинки
--->

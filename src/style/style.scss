@@ -1,3 +1,5 @@
+@import "./animation.scss";
+
 $mainColor: #eee6e6;
 
 * {
@@ -8,13 +10,13 @@ $mainColor: #eee6e6;
 
 @font-face {
     font-family: "Montserrat";
-    src: url('../font/Montserrat-Bold.ttf');
+    src: url("../font/Montserrat-Bold.ttf");
     font-weight: 700;
 }
 
 @font-face {
     font-family: "Montserrat";
-    src: url('../font/Montserrat-Regular.ttf');
+    src: url("../font/Montserrat-Regular.ttf");
     font-weight: 400;
 }
 
@@ -27,7 +29,7 @@ body {
 .container {
     height: 100vh;
     width: 100%;
-    background-image: url("../img/01.jpg");
+    background-image: url("../img/04.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -61,7 +63,6 @@ body {
     #date {
         font-size: 34px;
     }
-
 }
 
 .todo {
@@ -105,7 +106,6 @@ body {
             background-color: rgb(200, 248, 238);
             border-radius: 10px;
             border: none;
-
         }
         &::-webkit-scrollbar-thumb {
             box-shadow: inset 0 0 6px rgba(3, 63, 38, 0.61);
@@ -126,11 +126,12 @@ body {
             height: 35px;
             border: 1px solid white;
             cursor: pointer;
+            border-radius: 50%;
             &:checked {
-                border: 2px solid green;
+                background: rgb(153, 151, 151);
+                border: 1px solid rgb(153, 151, 151);
             }
         }
-
     }
 
     label {
@@ -139,12 +140,12 @@ body {
         align-items: center;
         gap: 10px;
         cursor: pointer;
-        transition: color .3s;
+        transition: color 0.3s;
         &:hover {
             color: rgb(199, 195, 195);
         }
-        &:hover input{
-            background: red;
+        &:hover input {
+            border: 1px solid rgb(61, 202, 61);
         }
     }
 
@@ -154,10 +155,10 @@ body {
         border: none;
         cursor: pointer;
     }
-     
+
     &__icon {
         fill: white;
-        transition: all .3s;
+        transition: all 0.3s;
         &:hover {
             transform: rotate(8deg);
         }
@@ -174,7 +175,7 @@ body {
         font-family: "Montserrat", sans-serif;
         cursor: pointer;
         display: none;
-        transition: all .3s;
+        transition: all 0.3s;
         &:hover {
             background: rgba(170, 169, 169, 0.938);
         }
@@ -192,7 +193,7 @@ body {
     width: 350px;
     position: relative;
     &__wrap {
-        display: grid; 
+        display: grid;
         gap: 20px;
     }
     &__items {
@@ -261,10 +262,31 @@ body {
     border-radius: 15px;
     padding: 40px;
     width: 80%;
+    &__btn {
+        width: 30px;
+        border: none;
+        background: transparent;
+        position: absolute;
+        top: 15%;
+        right: 4%;
+        cursor: pointer;
+    }
 }
 
 .hide {
     display: none;
 }
 
-@import './adaptive.scss';
+.error {
+    border: 1px solid rgb(240, 84, 84);
+    &:focus {
+        border: 1px solid rgb(240, 84, 84);
+    }
+}
+
+.done {
+    text-decoration: line-through;
+    color: rgb(153, 151, 151) !important;
+}
+
+@import "./adaptive.scss";

@@ -3,6 +3,7 @@ const todoContainer = document.querySelector('.todo__items');
 const blockTodo = document.querySelector('.todo');
 const deleteDoneTodo = document.querySelector('.todo__delete');
 
+
 function uniqleId() {
     return Date.now().toString(6) - Math.random().toString(6).slice(2, 0)
 }
@@ -13,8 +14,14 @@ export const handleAddTodo = () => {
         if (e.code === "Enter") {
 
             if (inputTodo.value === "") {
-                alert("Пустая строка");   
+                inputTodo.classList.add('error');
+                inputTodo.setAttribute('placeholder', "Введите текст");
+                inputTodo.classList.toggle('shake');
             } else {
+                inputTodo.classList.remove('error');
+                inputTodo.setAttribute('placeholder', "Новая задача");
+                inputTodo.classList.remove('shake');
+
                 const localTodo = JSON.parse(localStorage.getItem('todo')) || [];
 
                 const currentTodoData = {
@@ -41,8 +48,8 @@ export const renderTodoList = () => {
         const todoList = storageTodo.map((item) => {
             return `
             <div class="todo__item">
-                <label for="${item.id}">
-                <input type="checkbox" name="${item.id}" id="${item.id}" />
+                <label for="${item.id}" ${item.done && 'class="done"'}>
+                <input type="checkbox" name="${item.id}" id="${item.id}" ${item.done && 'checked'}/>
                    ${item.name}
                 </label>
                 <button type="button" class="todo__btn" data-todo="${item.id}">
@@ -82,6 +89,7 @@ export const renderTodoList = () => {
             `;
         }).join('');
 
+        
         todoContainer.innerHTML = todoList;
         handleDoneTodo();
         handleDeleteTodo();
@@ -98,12 +106,20 @@ export const renderTodoList = () => {
 }
 
 function handleDoneTodo() {
-    const todoElements = document.querySelectorAll('.todo__item input');
+    const todoElements = document.querySelectorAll('.todo__item label');
 
     todoElements.forEach((el) => {
-        el.addEventListener('click', (e) => {
+        el.addEventListener('change', (e) => {
             e.preventDefault();
-
+            if (e.target.checked) {
+                el.classList.add('zoomIn');
+                el.classList.remove('zoomOut');
+                el.classList.add('done');
+            } else {
+                el.classList.add('zoomOut');
+                el.classList.remove('zoomIn');
+                el.classList.remove('done');
+            }
             const storageTodo = JSON.parse(localStorage.getItem('todo'));
             const updateStorage = storageTodo.map((item) => {
                 if (item.id.toString() === e.target.id) {
@@ -113,7 +129,7 @@ function handleDoneTodo() {
             })
 
             localStorage.setItem('todo', JSON.stringify(updateStorage));
-            renderTodoList();
+            // renderTodoList();
         })
     })
 }
@@ -125,7 +141,6 @@ function handleDeleteTodo() {
         
         el.addEventListener('click', (e) => {
             e.preventDefault();
-            
             const storageTodo = JSON.parse(localStorage.getItem('todo'));
             const updateStorage = storageTodo.filter((item) => item.id.toString() !== el.getAttribute('data-todo'))
 

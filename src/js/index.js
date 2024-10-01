@@ -3,11 +3,10 @@ import { getCity } from './chooseCity';
 import { getCurrentDateAndTime } from './dateAndTime';
 import { getGeolocation } from './geolocation';
 import { getCurrentBgImg } from './sliderBg';
-import {  handleAddTodo ,renderTodoList } from './todoList';
-import { renderCurrentWeather } from './weather';
+import { handleAddTodo, renderTodoList } from './todoList';
 
 document.addEventListener("DOMContentLoaded", () => {
-    // getCurrentBgImg();
+    getCurrentBgImg();
     getCurrentDateAndTime();
     renderTodoList();
     handleAddTodo();
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener('load', () => {
     getGeolocation();
     getCity();
-    // renderCurrentWeather();
 })
 
 

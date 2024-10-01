@@ -6,6 +6,9 @@ const cityList = document.querySelector('.weather__items');
 
 export const getCity = () => {
     weatherInput.addEventListener('input', (e) => {
+        if (e.target.value === "") {
+            cityList.classList.add('hide');
+        }
         e.target.value && getListCity({ text: e.target.value }).then((data) => {
             if (data.results) {
                 renderListCity(data.results)
@@ -19,7 +22,7 @@ export const getCity = () => {
 function renderListCity(array) {
     cityList.classList.remove('hide');
     const listCity = array.map((item) => {
-        return `<p class="weather__item"  data-uri=${item.uri}>${item.title.text} ${item.subtitle ? `,  ${item.subtitle.text}` : ""}</p>`;
+        return `<p class="weather__item" data-uri=${item.uri}>${item.title.text} ${item.subtitle ? `,  ${item.subtitle.text}` : ""}</p>`;
     }).join('');
     cityList.innerHTML = listCity;
     handleClickCity();
