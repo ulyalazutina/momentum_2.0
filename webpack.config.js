@@ -39,7 +39,7 @@ module.exports = ({ develop }) => ({
             },
             {
                 test: /\.(png|jpe?g|svg)$/i,
-                type: 'asset',
+                type: 'asset/resource',
                 generator: {
                     filename: 'img/[hash][ext][query]'
                 }
