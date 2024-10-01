@@ -2,7 +2,7 @@
 ##  В приложении есть часы, дата, слайдер изображений, виджеты погоды, список задач.
 
 ### Развернутый проект 
-https://ulyalazutina.github.io/autocenter/
+[https://ulyalazutina.github.io/autocenter/](https://ulyalazutina.github.io/momentum_2.0/)
 
 ## Запуск
 
