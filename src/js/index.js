@@ -7,7 +7,7 @@ import {  handleAddTodo ,renderTodoList } from './todoList';
 import { renderCurrentWeather } from './weather';
 
 document.addEventListener("DOMContentLoaded", () => {
-    getCurrentBgImg();
+    // getCurrentBgImg();
     getCurrentDateAndTime();
     renderTodoList();
     handleAddTodo();
@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
 window.addEventListener('load', () => {
     getGeolocation();
     getCity();
-    renderCurrentWeather();
+    // renderCurrentWeather();
 })
 
 

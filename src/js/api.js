@@ -25,7 +25,7 @@ export const getLocality = async({geo, coordinates}) => {
 
 export const getListCity = async({text}) => {
     try {
-        const response = await fetch(API_URL_SUGGEST+`text=${text}`);
+        const response = await fetch(API_URL_SUGGEST+`text=${text}&results=5`);
 
         if (response.status === 403) {
             throw new Error("Запрос не содержит параметр apikey или указан неверный ключ.")

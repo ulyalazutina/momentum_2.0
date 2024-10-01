@@ -1,0 +1,119 @@
+@media (max-width: 1440px) {
+   .container {
+        padding: 80px;
+    }
+    .data-time #time {
+        font-size: 110px;
+        width: 436px;
+    }
+    .data-time #date {
+        font-size: 30px;
+    }
+    .todo__items {
+        max-height: 80px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .weather {
+        padding: 20px 30px;
+        &_input, &__deg, &__item{
+            font-size: 22px;
+        }
+        &__items {
+            padding: 20px 30px;
+        }
+
+    }
+    .todo__input {
+        font-size: 22px;
+    }
+    .todo__item > label {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 60px;
+    }
+    .data-time {
+        width: 100%;
+    }
+    .todo__input {
+        width: 350px;
+    }
+}
+
+@media (max-width: 550px) {
+    .weather {
+        width: 100%;
+        gap: 15px;
+        padding: 15px 20px;
+        &__input, &__deg, &__item {
+            font-size: 20px;
+        }
+        &__inner {
+            gap: 5px;
+        }
+        &__icon {
+            width: 35px;
+            background-size: 35px;
+        }
+        &__items {
+            padding: 15px 20px;
+        }
+    }
+    .todo {
+        width: 100%;
+        &__input {
+            width: 100%;
+            font-size: 20px;
+        } 
+        &__item > label {
+            font-size: 20px;
+        }
+        &__item > label > input {
+            width: 20px;
+            height: 20px;
+        }
+        &__btn {
+            width: 20px;
+        }
+        &__items {
+            max-height: 60px;
+        }
+        &__delete {
+            font-size: 18px;
+            padding: 10px 15px;
+            width: 100%;
+        }
+    }
+    .container {
+        padding: 30px;
+    }
+    .data-time #time {
+        font-size: 64px;
+        width: 283px;
+    }
+    .data-time #date {
+        font-size: 24px;
+    }
+    .todo__input {
+        padding: 10px 15px;
+    }
+}
+
+
+@media (max-width: 375px) {
+    .data-time #time {
+        font-size: 58px;
+        width: 252px;
+    }
+    .data-time {
+        gap: 10px;
+    }
+    .container {
+        padding: 15px;
+    }
+}
